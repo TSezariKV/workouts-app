@@ -23,7 +23,8 @@ app.use(express.json())
 // routes
 app.get('/api', (req, res) => {
     Workout.find({})
-        .then(result => {
-            res.json(result)
+        .then(results => {
+            res.json(results)
         })
+        .catch(err => console.log(err))
 })
